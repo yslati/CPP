@@ -1,7 +1,6 @@
 #include "PhoneBook.hpp"
 
 book::book() {
-	// std::cout << "constractor called" << std::endl;
 	return ;
 }
 
@@ -81,7 +80,6 @@ void book::contact() {
 }
 
 book::~book() {
-	// std::cout << "Desctractor called" << std::endl;
 	return ;
 }
 
