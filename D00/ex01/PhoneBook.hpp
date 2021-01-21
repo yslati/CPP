@@ -1,10 +1,13 @@
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef PHONEBOOK_H
+# define PHONEBOOK_H
 
 #include <iostream>
 #include <cctype>
 #include <cstring>
 #include <cstdlib>
+#include <iomanip>
+
+const int MAX_CONTACT = 8;
 
 class book {
 	public:
@@ -12,12 +15,10 @@ class book {
 		std::string cmd;
 		void add();
 		void search();
-		void exit();
-		// void check_cmd(std::string cmd);
+		void contact();
 
 		~book();
 	private:
-		// std::string _firstName;
 		std::string _firstName;
 		std::string _lastName;
 		std::string _nickName;
@@ -28,7 +29,7 @@ class book {
 		std::string _birthdayDate;
 		std::string _favoriteMeal;
 		std::string _uColor;
-		std::string _derkestSecret;
+		std::string _darkestSecret;
 };
 
 #endif
