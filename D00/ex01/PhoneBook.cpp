@@ -62,7 +62,7 @@ std::string	more_ten(std::string str) {
 }
 
 void book::contact() {
-	int len;
+
 	std::string buff;
 	buff = (this->_firstName.length() < 10) ? this->_firstName : more_ten(this->_firstName);
 	std::cout << "|";

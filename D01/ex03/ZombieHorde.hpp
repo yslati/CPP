@@ -1,5 +1,5 @@
-#ifndef ZOMBIEEVENT_H
-# define ZOMBIEEVENT_H
+#ifndef ZOMBIEHORDE_H
+# define ZOMBIEHORDE_H
 
 #include <iostream>
 #include <cctype>
@@ -8,14 +8,13 @@
 #include <iomanip>
 #include "Zombie.hpp"
 
-class ZombieEvent {
+class ZombieHorde {
 
 	public:
-		ZombieEvent();
-		~ZombieEvent();
+		ZombieHorde(int N);
+		~ZombieHorde();
 		void setZombieType(std::string type);
 		Zombie* newZombie(std::string name);
-		Zombie *randomChump();
 
 		std::string gettype() {
 			return _type;

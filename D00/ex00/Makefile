@@ -1,0 +1,18 @@
+NAME = megaphone
+
+FLAGS = -Wall -Wextra -Werror
+
+SRC = megaphone.cpp
+
+all: $(NAME)
+
+$(NAME): 
+	@g++ $(FLAGS) $(SRC) -o $(NAME)
+	@echo "Success"
+
+clean:
+
+fclean: clean
+	@rm -rf $(NAME)
+
+re: fclean all

@@ -10,9 +10,7 @@
 class Zombie {
 
 	public:
-		Zombie(std::string name, std::string type): _name(name), _type(type) {
-			std::cout << "Zombie " << _name << " is born\n";
-		}
+		Zombie(std::string name, std::string type);
 		~Zombie();
 		void announce();
 
