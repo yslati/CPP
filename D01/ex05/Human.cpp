@@ -1,9 +1,6 @@
 #include "Human.hpp"
 
-Human::Human() : b(*(new Brain()))
-{
-	// Brain *b = new Brain();
-	// this->b = *b;
+Human::Human() {
 	return ;
 }
 
@@ -11,11 +8,11 @@ Human::~Human() {
 	return ;
 }
 
-std::string Human::identify() {
+std::string Human::identify() const {
 	return (this->b.identify());
 }
 
-Brain Human::getBrain() const{
+Brain const &Human::getBrain() const{
 	return b;
 }
 
