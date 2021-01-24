@@ -2,13 +2,11 @@ NAME = replace
 
 FLAGS = -Wall -Wextra -Werror
 
-SRC = 
-
-HEADER = replace.hpp
+SRC = main.cpp
 
 all: $(NAME)
 
-$(NAME): $(HEADER)
+$(NAME):
 	@g++ $(FLAGS) $(SRC) -o $(NAME)
 	@echo "Success"
 
