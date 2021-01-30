@@ -3,16 +3,14 @@
 
 #include <iostream>
 
-static const int cot = 8;
-
 class Fixed {
 
 	private:
-		int _n;
+		int _fpnt;
+		static const int _fbits;
 	
 	public:
 		Fixed();
-		Fixed(int const n);
 		Fixed(Fixed const & fix); // copy constractor
 
 		Fixed & operator=(Fixed const & fix);
