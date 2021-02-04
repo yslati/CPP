@@ -9,7 +9,7 @@ int		main() {
 	Jo = Moze;
 	Jo.
 
-	Amara.vaulthunter_dot_exe("Moze");
+	// Amara.vaulthunter_dot_exe("Moze");
 	Moze.rangedAttack("Amara");
 
 
