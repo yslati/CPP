@@ -2,6 +2,8 @@
 # define HUMAN_H
 
 #include <iostream>
+#include <stdlib.h>
+#include <ctime>
 
 class Human {
 	private:
