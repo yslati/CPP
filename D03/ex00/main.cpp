@@ -7,7 +7,6 @@ int		main() {
 	FragTrap Jo;
 
 	Jo = Moze;
-	Jo.
 
 	// Amara.vaulthunter_dot_exe("Moze");
 	Moze.rangedAttack("Amara");
