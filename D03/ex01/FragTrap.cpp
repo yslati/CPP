@@ -6,7 +6,7 @@
 /*   By: yslati <yslati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:49:15 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/05 17:40:36 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/05 18:09:05 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ FragTrap::FragTrap() {
 	_Level = 1;
 	_HitPoints = _MaxHitPoints;
 	_EnergyPoints = _MaxEnergyPoints;
-	_name = "Anonymos";
+	_name = "anonymous";
 	std::cout << CYAN << "FR4G-TP " << "Claptrap -- start bootup sequence." << NC << std::endl;
 	return;
 }
@@ -63,8 +63,6 @@ void		FragTrap::meleeAttack(std::string const & target) {
 	std::cout << BLUE << "FR4G-TP " << _name << " attacks " << target << " at range, causing " << _MeleeAttackDamage << " points of damage!, HAHAHA Take that!" << NC << std::endl;
 }
 
-
-
 void		FragTrap::takeDamage(unsigned int amount) {
 
 	if (_HitPoints + _ArmorDamageReduction - amount <= 0) {
@@ -75,7 +73,6 @@ void		FragTrap::takeDamage(unsigned int amount) {
 		_HitPoints = _HitPoints + _ArmorDamageReduction - amount;
 		std::cout << L_RED << "FR4G-TP " << _name << ": I can't feel my fingers! Gah! I don't have any fingers! | current Hit Point: " << _HitPoints << NC << std::endl;
 	}
-
 }
 void		FragTrap::beRepaired(unsigned int amount) {
 
