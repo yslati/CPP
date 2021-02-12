@@ -3,82 +3,119 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yslati <yslati@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/05 18:27:34 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/06 12:31:07 by yslati           ###   ########.fr       */
+/*   Created: 2021/02/11 10:25:54 by yslati            #+#    #+#             */
+/*   Updated: 2021/02/11 18:17:44 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
 
-int		ClapTrap::_MaxHitPoints = 100;
-int		ClapTrap::_MaxEnergyPoints = 50;
-int		ClapTrap::_MeleeAttackDamage = 20;
-int		ClapTrap::_RangedAttackDamage = 15;
-int		ClapTrap::_ArmorDamageReduction = 3;
+int		ClapTrap::_maxHitPoints = 100;
+int		ClapTrap::_maxEnergyPoints = 50;
+int		ClapTrap::_meleeAttackDamage = 20;
+int		ClapTrap::_rangedAttackDamage = 15;
+int		ClapTrap::_armorDamageReduction = 3;
 
-ClapTrap::ClapTrap(void) {
-	_Level = 1;
-	_HitPoints = _MaxHitPoints;
-	_EnergyPoints = _MaxEnergyPoints;
-	_name = "anonymous";
-	std::cout << CYAN << "FR4G-TP " << _name << ": Here we go again!" << NC << std::endl;
+ClapTrap::ClapTrap( void )
+{
+	_name = "Default";
+	std::cout << "ClapTrap " << "\033[1;31m" << _name << "\033[0m" <<  " Called" << std::endl;
+	_level = 1;
+	_hitPoints = _maxHitPoints;
+	_energyPoints = _maxEnergyPoints;
 	return ;
 }
-ClapTrap::ClapTrap(std::string name) {
-	_Level = 1;
-	_HitPoints = _MaxHitPoints;
-	_EnergyPoints = _MaxEnergyPoints;
+
+ClapTrap::~ClapTrap( void )
+{
+	std::cout<< "ClapTrap " << "\033[1;31m" << _name << "\033[0m" << " is dead" << std::endl;
+	return ;
+}
+
+ClapTrap::ClapTrap( std::string const & name )
+{
 	_name = name;
-	std::cout << CYAN << "FR4G-TP " << _name << ": Recompiling my combat code!" << NC << std::endl;
+	std::cout << "ClapTrap CL4T-TP " << _name <<  " Called to join battle" << std::endl;
+	_level = 1;
+	_hitPoints = _maxHitPoints;
+	_energyPoints = _maxEnergyPoints;
 	return ;
 }
-ClapTrap::ClapTrap(ClapTrap const & src) {
+
+ClapTrap::ClapTrap( ClapTrap const & src )
+{
+	std::cout << "Recompiling my combat code!, I'm Ready" << std::endl;
 	*this = src;
-	_name = src._name;
-	std::cout << CYAN << "FR4G-TP " << src._name << ": Yo EveryBody we are here again!!" << NC << std::endl;
-	return ;
-}
-ClapTrap & ClapTrap::operator=(ClapTrap const & src) {
-	_Level = src._Level;
-	_HitPoints = src._HitPoints;
-	_EnergyPoints = src._EnergyPoints;
-	std::cout << "FR4G-TP " << src._name << " RUN FOR YOUR LIIIIIVES!!! " << _name << std::endl;
-	return *this;
-}
-ClapTrap::~ClapTrap(void) {
-	std::cout << RED << "FR4G-TP " << _name << " I'M DEAD!!!!!!" << NC << std::endl;
 	return;
 }
 
-void		ClapTrap::rangedAttack(std::string const & target) {
-	std::cout << BLUE << "FR4G-TP " << _name << " attacks " << target << " | One down, any other takers?" << NC << std::endl;
-}
-void		ClapTrap::meleeAttack(std::string const & target) {
-	std::cout << BLUE << "FR4G-TP " << _name << " Take that! | " << target << " causing " << _MeleeAttackDamage << " points of damage!, HAHAHA" << NC << std::endl;
+ClapTrap & ClapTrap::operator=( ClapTrap const & src )
+{
+	if (this != &src)
+	{
+		this->_name = src._name;
+		this->_energyPoints = src._energyPoints;
+		this->_hitPoints = src._hitPoints;
+		this->_level = src._level;
+	}
+	return *this;
 }
 
-void		ClapTrap::takeDamage(unsigned int amount) {
+void	ClapTrap::rangedAttack(std::string const & target) const
+{
+	std::cout << "\033[0;32mClapTrap <" << _name << ">"
+	<< " attacks <" << target << "> at range, causing <"
+	<< _rangedAttackDamage << "> points of damage!\033[0m"
+	<< std::endl; 
+	return ;
+}
 
-	if ((_HitPoints + _ArmorDamageReduction - amount) <= 0) {
-		_HitPoints = 0;
-		std::cout << RED << "FR4G-TP " << _name << ": Argh arghargh death gurgle gurglegurgle urgh... death." << NC << std::endl;
+void	ClapTrap::meleeAttack(std::string const & target) const
+{
+	std::cout << "\033[0;32mClapTrap Hyah! Heyyah! take That <" << _name << ">"
+	<< " attacks <" << target << " ,causing <"
+	<< _meleeAttackDamage << "> points of damage!\033[0m"
+	<< std::endl; 
+	return ;
+}
+
+void	ClapTrap::takeDamage(unsigned int amount)
+{
+	int		life;
+
+	life = _hitPoints + _armorDamageReduction - amount;
+	if (life > 0 && _hitPoints > 0)
+	{
+		_hitPoints = _hitPoints + _armorDamageReduction - amount;
+		std::cout << _name << " take damage of "
+		<< amount - _armorDamageReduction << " and his life is "
+		<< _hitPoints << std::endl;
 	}
-	else {
-		_HitPoints = _HitPoints + _ArmorDamageReduction - amount;
-		if (_HitPoints < 0)
-			_HitPoints = 0;
-		std::cout << L_RED << "FR4G-TP " << _name << ": I can't feel my fingers! Gah! I don't have any fingers! | current Hit Point: " << _HitPoints << NC << std::endl;
+	else
+	{
+		_hitPoints = 0;
+		std::cout << "Hehehehe, mwaa ha ha ha, MWAA HA HA HA! you are dead!"
+		<< " your life is 0" << std::endl;
 	}
 }
-void		ClapTrap::beRepaired(unsigned int amount) {
 
-	if (_HitPoints + amount <= 100) {
-		_HitPoints += amount;
-		std::cout << GREEN << "FR4G-TP " << _name << ": Health! Eww, what flavor is red?" << NC << std::endl;
+void	ClapTrap::beRepaired(unsigned int amount)
+{
+	if (this->_hitPoints > 0 && (_hitPoints + amount) <= unsigned(_maxHitPoints))
+	{
+		_hitPoints += amount;
+		std::cout << "FR4G-TP " << _name << "BeRepaired with "
+		<< amount << "and his life is " << _hitPoints << std::endl;
 	}
-	else {
-		std::cout << L_GREEN << "FR4G-TP " << _name << ": Oh i can't handle all this power !!" << NC << std::endl;
+	else if ((_hitPoints + amount) > unsigned(_maxHitPoints))
+	{
+		std::cout << "FR4G-TP " << _name << "Can't have more than 100 HP LIFE is "
+		<< _hitPoints << std::endl;
+		this->_hitPoints = _maxHitPoints;
 	}
+	else
+		std::cout << "Hehehehe, mwaa ha ha ha, MWAA HA HA HA! you are dead!"
+		<< " your life is 0" << std::endl;
 }

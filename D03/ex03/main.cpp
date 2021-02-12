@@ -3,39 +3,76 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yslati <yslati@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/05 14:49:18 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/06 12:33:52 by yslati           ###   ########.fr       */
+/*   Created: 2021/02/11 10:26:58 by yslati            #+#    #+#             */
+/*   Updated: 2021/02/11 17:41:36 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+# include "FragTrap.hpp"
+# include "ScavTrap.hpp"
+# include "NinjaTrap.hpp"
 
-int		main() {
 
-	FragTrap Amara ("Amara");
-	ScavTrap Moze ("Moze");
+int main()
+{
+	FragTrap	frag;
+	ScavTrap	scav;
+	ClapTrap	clap;
+	NinjaTrap	ninja("Ninja");
 
-	ScavTrap k(Moze);
+	std::string target[3] = {
+		"\033[1;31mRobot number 1\033[0m",
+		"\033[1;31mRobot number 2\033[0m",
+		"\033[1;31mRobot number 3\033[0m"
+	};
 
-	k.meleeAttack("kkkk");
-	Amara.rangedAttack("Devil");
-	Amara.meleeAttack("Devil");
-	Moze.challengeNewcomer();
-	Amara.takeDamage(30);
-	Moze.beRepaired(20);
-	Amara.beRepaired(20);
-	Amara.vaulthunter_dot_exe("Athena");
-	Amara.takeDamage(30);
-	Moze.takeDamage(30);
-	Moze.rangedAttack("Athena");
-	Amara.takeDamage(50);
-	Moze.meleeAttack("Athena");
-	Moze.takeDamage(25);
-	Amara.vaulthunter_dot_exe("Athena");
-	Amara.takeDamage(30);
+	// Ninja
+	ninja.beRepaired(15);
+	std::cout << "\n";
+	ninja.takeDamage(15);
+	std::cout << "\n";
+	ninja.rangedAttack(target[0]);
+	std::cout << "\n";
+	ninja.ninjaShoeBox(scav);
+	std::cout << "\n";
 
-	return (0);
+	std::cout << "\n";
+	ninja.ninjaShoeBox(frag);
+	std::cout << "\n";
+
+	std::cout << "\n";
+	ninja.ninjaShoeBox(clap);
+	std::cout << "\n";
+	
+	std::cout << "\n";
+	ninja.ninjaShoeBox(ninja);
+	std::cout << "\n";
+
+	// Frag
+	frag.beRepaired(15);
+	std::cout << "\n";
+	frag.takeDamage(15);
+	std::cout << "\n";
+	frag.rangedAttack(target[0]);
+	std::cout << "\n";
+	frag.vaulthunter_dot_exe(target[1]);
+	std::cout << "\n";
+	// Scav
+	scav.beRepaired(15);
+	std::cout << "\n";
+	scav.takeDamage(15);
+	std::cout << "\n";
+	scav.rangedAttack(target[0]);
+	std::cout << "\n";
+	scav.challengeNewcomer();
+	std::cout << "\n";
+	// Clap
+	clap.beRepaired(15);
+	std::cout << "\n";
+	clap.takeDamage(15);
+	std::cout << "\n";
+	clap.rangedAttack(target[0]);
+	std::cout << "\n";
 }

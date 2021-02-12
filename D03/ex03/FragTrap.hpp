@@ -3,45 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yslati <yslati@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/05 14:49:12 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/06 12:33:49 by yslati           ###   ########.fr       */
+/*   Created: 2021/02/11 10:26:53 by yslati            #+#    #+#             */
+/*   Updated: 2021/02/11 18:07:55 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_H
-# define FRAGTRAP_H
+#ifndef FRAG_TRAP_HPP
+# define FRAG_TRAP_HPP
 
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
 
-class FragTrap:  public ClapTrap{
-	private:
-		int				_HitPoints;
-		static int		_MaxHitPoints;
-		int				_EnergyPoints;
-		static int		_MaxEnergyPoints;
-		int				_Level;
-		std::string		_name;
-		
-		static int		_MeleeAttackDamage;
-		static int		_RangedAttackDamage;
-		static int		_ArmorDamageReduction;
-
-		void	Funzerker(std::string const & target);
-		void	MeatUnicycle(std::string const & target);
-		void	Blightbot(std::string const & target);
-		void	Mechromagician(std::string const & target);
-		void	Miniontrap(std::string const & target);
-
+class FragTrap: public ClapTrap {
 	public:
-		FragTrap(void);
-		FragTrap(std::string name);
-		FragTrap(FragTrap const & src);
-		FragTrap & operator=(FragTrap const & src);
-		~FragTrap(void);
+		FragTrap(std::string const & name);
+		FragTrap( void );
+		FragTrap( FragTrap const & src );
+		FragTrap & operator=( FragTrap const & src );
+		~FragTrap( void );
 
-		void	vaulthunter_dot_exe(std::string const & target);
+		void		vaulthunter_dot_exe(std::string const & target);
+
+		std::string	getname() const {
+			return _name;
+		}
+
+	private:
+		void		blightBotAttack(std::string const & target);
+		void		gunWizardAttack(std::string const & target);
+		void		lazerAttack(std::string const & target);
+		void		torgueFiestaAttack(std::string const & target);
+		void		oneShotWonderAttack(std::string const & target);
 };
 
 #endif

@@ -5,17 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/11 10:24:43 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/11 18:11:30 by yslati           ###   ########.fr       */
+/*   Created: 2021/02/11 15:10:17 by yslati            #+#    #+#             */
+/*   Updated: 2021/02/11 17:58:34 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRAG_TRAP_HPP
 # define FRAG_TRAP_HPP
 
-# include <iostream>
+# include "ClapTrap.hpp"
 
-class FragTrap {
+class FragTrap: virtual public ClapTrap {
 	public:
 		FragTrap(std::string const & name);
 		FragTrap( void );
@@ -23,25 +23,13 @@ class FragTrap {
 		FragTrap & operator=( FragTrap const & src );
 		~FragTrap( void );
 
-		void				rangedAttack(std::string const & target) const;
-		void				meleeAttack(std::string const & target) const;
-		void				takeDamage(unsigned int amount);
-		void				vaulthunter_dot_exe(std::string const & target);
-		void				beRepaired(unsigned int amount);
-		int					getPoints( void ) const;
+		void		vaulthunter_dot_exe(std::string const & target);
 
-	private:
-		std::string	_name;
-		int			_hitPoints;
-		static int	_maxHitPoints;
-		int 		_energyPoints;
-		static int	_maxEnergyPoints;
-		int 		_level;
-		static int	_meleeAttackDamage;
-		static int	_rangedAttackDamage;
-		static int	_armorDamageReduction;
+		std::string	getname() const {
+			return _name;
+		}
 		
-		// random function for vaulthunter_dot_exe
+	private:
 		void		blightBotAttack(std::string const & target);
 		void		gunWizardAttack(std::string const & target);
 		void		lazerAttack(std::string const & target);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/11 10:26:31 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/11 18:18:22 by yslati           ###   ########.fr       */
+/*   Created: 2021/02/11 15:10:00 by yslati            #+#    #+#             */
+/*   Updated: 2021/02/11 18:18:54 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ ClapTrap::~ClapTrap( void )
 ClapTrap::ClapTrap( std::string const & name )
 {
 	_name = name;
-	std::cout << "ClapTrap test " << _name <<  "Called" << std::endl;
+	std::cout << "ClapTrap test " << _name <<  " Called" << std::endl;
 	_level = 1;
 	_hitPoints = _maxHitPoints;
 	_energyPoints = _maxEnergyPoints;
@@ -53,8 +53,7 @@ ClapTrap::ClapTrap( ClapTrap const & src )
 
 ClapTrap & ClapTrap::operator=( ClapTrap const & src )
 {
-	if (this != &src)
-	{
+	if (this != &src) {
 		this->_name = src._name;
 		this->_energyPoints = src._energyPoints;
 		this->_hitPoints = src._hitPoints;
@@ -77,7 +76,8 @@ void	ClapTrap::meleeAttack(std::string const & target) const
 	std::cout << "\033[0;32mClapTrap Hyah! Heyyah! take That <" << _name << ">"
 	<< " attacks <" << target << " ,causing <"
 	<< _meleeAttackDamage << "> points of damage!\033[0m"
-	<< std::endl; 
+	<< std::endl;
+	std::cout << "ClapTrap can not attacks with meleeAttack" << std::endl;
 	return ;
 }
 
@@ -103,15 +103,14 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->_hitPoints > 0 && (_hitPoints + amount) <= unsigned(_maxHitPoints))
-	{
+	if (this->_hitPoints > 0 && (_hitPoints + amount) <= unsigned(_maxHitPoints)) {
 		_hitPoints += amount;
 		std::cout << "FR4G-TP " << _name << "BeRepaired with "
 		<< amount << "and his life is " << _hitPoints << std::endl;
 	}
 	else if ((_hitPoints + amount) > unsigned(_maxHitPoints))
 	{
-		std::cout << "FR4G-TP " << _name << " Can't have more than 100 HP LIFE is "
+		std::cout << "FR4G-TP " << _name << "Can't have more than 100 HP LIFE is "
 		<< _hitPoints << std::endl;
 		this->_hitPoints = _maxHitPoints;
 	}
@@ -119,3 +118,4 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "Hehehehe, mwaa ha ha ha, MWAA HA HA HA! you are dead!"
 		<< " your life is 0" << std::endl;
 }
+

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/11 10:26:26 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/11 18:13:11 by yslati           ###   ########.fr       */
+/*   Created: 2021/02/11 15:10:56 by yslati            #+#    #+#             */
+/*   Updated: 2021/02/11 18:19:25 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap {
+class ScavTrap: virtual public ClapTrap {
 	public:
 		ScavTrap( std::string const & name );
 		ScavTrap( void );
@@ -25,6 +25,10 @@ class ScavTrap: public ClapTrap {
 
 		void		challengeNewcomer( void );
 
+		std::string	getname() const {
+			return _name;
+		}
+		
 	private:
 
 };

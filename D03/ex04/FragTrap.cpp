@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/11 10:26:48 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/11 17:41:36 by yslati           ###   ########.fr       */
+/*   Created: 2021/02/11 15:10:12 by yslati            #+#    #+#             */
+/*   Updated: 2021/02/11 17:54:48 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ FragTrap::FragTrap( void ) : ClapTrap()
 
 FragTrap::~FragTrap( void )
 {
-	std::cout << "\033[1;32mIs it dead? Can, can I open my eyes now?\033[0m" << std::endl;
+	std::cout << "\033[1;32mFRAGTRAP: Is it dead? Can, can I open my eyes now?\033[0m" << std::endl;
 	return ;
 }
 

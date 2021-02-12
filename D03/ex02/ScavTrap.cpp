@@ -3,67 +3,78 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yslati <yslati@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/05 14:52:38 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/06 12:30:10 by yslati           ###   ########.fr       */
+/*   Created: 2021/02/11 10:26:20 by yslati            #+#    #+#             */
+/*   Updated: 2021/02/11 17:41:36 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-
-int		ScavTrap::_MaxHitPoints = 100;
-int		ScavTrap::_MaxEnergyPoints = 50;
-int		ScavTrap::_MeleeAttackDamage = 20;
-int		ScavTrap::_RangedAttackDamage = 15;
-int		ScavTrap::_ArmorDamageReduction = 3;
+# include "ScavTrap.hpp"
 
 
-ScavTrap::ScavTrap(void): ClapTrap() {
-	_Level = 1;
-	_HitPoints = _MaxHitPoints;
-	_EnergyPoints = _MaxEnergyPoints;
-	_name = "anonymous";
-	std::cout << CYAN << "FR4G-TP " << _name << ": Ah, man, I am so late!" << NC << std::endl;
-	return;
+ScavTrap::ScavTrap( void ) : ClapTrap()
+{
+	this->_name = ClapTrap::_name;
+	this->_hitPoints = ClapTrap::_maxHitPoints;
+	this->_energyPoints = ClapTrap::_maxEnergyPoints;
+	this->_level = ClapTrap::_level;
+	std::cout << "\033[1;32mScavTrap: Hey hey check me out everyBody my name is "
+	<< this->_name << "\033[0m" << std::endl;
+	srand(clock());
+	return ;
 }
 
-ScavTrap::ScavTrap(std::string name): ClapTrap(name) {
-	_Level = 1;
-	_HitPoints = _MaxHitPoints;
-	_EnergyPoints = _MaxEnergyPoints;
-	_name = name;
-	std::cout << CYAN << "FR4G-TP " << _name << ": Let's get this party started!" << NC << std::endl;
-	return;
+ScavTrap::ScavTrap( std::string const & name ) : ClapTrap(name)
+{
+	this->_name = name;
+	std::cout << "\033[2;32mScavTrap: Yoooohooo, unce!, !unce, I think I lost the beat but unce!, my name is " 
+	<< this->_name << "\033[0m" << std::endl;
+	this->_hitPoints = ClapTrap::_maxHitPoints;
+	this->_energyPoints = ClapTrap::_maxEnergyPoints;
+	this->_level = ClapTrap::_level;
+	srand(clock());
+	return ;
 }
 
-ScavTrap::ScavTrap(ScavTrap const & src): ClapTrap(src) {
-	std::cout << CYAN << "FR4G-TP " << src._name << ": Look out everybody! Things are about to get awesome!" << NC << std::endl;
-	return;
+ScavTrap::~ScavTrap( void )
+{
+	std::cout << "\033[1;32mScavTrap: Am I dead or not, Can I open my eyes?\033[0m" << std::endl;
+	return ;
 }
 
-ScavTrap & ScavTrap::operator=(ScavTrap const & src) {
-	_Level = src._Level;
-	_HitPoints = src._HitPoints;
-	_EnergyPoints = src._EnergyPoints;
-	std::cout << "FR4G-TP " << src._name << " is giving Ammo to " << _name << std::endl;
+ScavTrap::ScavTrap( ScavTrap const & src ) : ClapTrap(src)
+{
+	std::cout << "\033[1;32ScavTrap: Recompiling my combat code! my name is \033[0m"
+	<< "\033[0;32m" << this->_name << "\033[0m" << std::endl;
+	*this = src;
+	return ;
+}
+
+ScavTrap & ScavTrap::operator=( ScavTrap const & src )
+{
+	if (this != &src)
+	{
+		this->_name = src._name;
+		this->_energyPoints = src._energyPoints;
+		this->_hitPoints = src._hitPoints;
+		this->_level = src._level;
+	}
 	return *this;
 }
 
-ScavTrap::~ScavTrap(void) {
-	std::cout << RED << "FR4G-TP " << _name << " I'M DEAD I'M DEAD OHMYGOD I'M DEAD!" << NC << std::endl;
-	return;
-}
 
-void		ScavTrap::challengeNewcomer() {
-
-	srand(clock());
-	std::string attacks[5] = {
-		": You versus me! Me versus you! Either way!",
-		": I will prove to you my robotic superiority!",
-		": Dance battle! Or, you know... regular battle.",
-		": Man versus machine! Very tiny streamlined machine!",
-		": Care to have a friendly duel?",
+void	ScavTrap::challengeNewcomer( void )
+{
+	std::string		challenge[5] = {
+		"\033[1;31mI am a tornado of death and bullets!\033[0m",
+		"\033[1;31mAww! Now I want a snow cone\033[0m",
+		"\033[1;31mFreeze, in the reference of emotion!\033[0m",
+		"\033[1;31mFly mini-trap! Fly!\033[0m",
+		"\033[1;31mTrouncy, flouncy... founcy... those aren't words\033[0m"
 	};
-	std::cout << YELLOW << "FR4G-TP " << _name << attacks[rand() % 5] << NC << std::endl;
+	int		r = rand() % 5;
+	std::cout << "Challenge: " << std::endl;
+	std::cout << challenge[r] << std::endl;
+	return ;
 }

@@ -5,27 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/11 10:26:16 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/11 17:41:36 by yslati           ###   ########.fr       */
+/*   Created: 2021/02/11 15:10:26 by yslati            #+#    #+#             */
+/*   Updated: 2021/02/11 18:20:08 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
+# include "NinjaTrap.hpp"
+# include "SuperTrap.hpp"
 
 
 int main()
 {
-	FragTrap	frag;
-	ScavTrap	scav ("Jims");
+	SuperTrap super("SCAV-V0.1");
+	std::cout << "\n";
+	FragTrap	frag("Frag");
+	std::cout << "\n";
+	ScavTrap	scav;
+	std::cout << "\n";
 	ClapTrap	clap;
+	std::cout << "\n";
+	NinjaTrap	ninja("Ninja115");
+	std::cout << "\n";
 
 	std::string target[3] = {
 		"\033[1;31mRobot number 1\033[0m",
 		"\033[1;31mRobot number 2\033[0m",
 		"\033[1;31mRobot number 3\033[0m"
 	};
-
+	// Super
+	super.rangedAttack(target[0]);
+	super.meleeAttack(target[1]);
+	super.beRepaired(100);
+	super.takeDamage(15);
+	
 	// Frag
 	frag.beRepaired(15);
 	std::cout << "\n";
@@ -51,5 +65,27 @@ int main()
 	std::cout << "\n";
 	clap.rangedAttack(target[0]);
 	std::cout << "\n";
+	clap.meleeAttack(target[2]);
+	std::cout << "\n";
+	// Ninja
+	ninja.beRepaired(15);
+	std::cout << "\n";
+	ninja.takeDamage(15);
+	std::cout << "\n";
+	ninja.rangedAttack(target[0]);
+	std::cout << "\n";
+	ninja.ninjaShoeBox(scav);
+	std::cout << "\n";
 
+	std::cout << "\n";
+	ninja.ninjaShoeBox(frag);
+	std::cout << "\n";
+
+	std::cout << "\n";
+	ninja.ninjaShoeBox(clap);
+	std::cout << "\n";
+	
+	std::cout << "\n";
+	ninja.ninjaShoeBox(ninja);
+	std::cout << "\n";
 }

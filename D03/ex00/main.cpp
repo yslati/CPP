@@ -3,37 +3,54 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yslati <yslati@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/05 14:49:18 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/05 14:49:19 by yslati           ###   ########.fr       */
+/*   Created: 2021/02/11 10:24:55 by yslati            #+#    #+#             */
+/*   Updated: 2021/02/11 17:41:36 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+# include "FragTrap.hpp"
 
-int		main() {
+int main()
+{
+	FragTrap alex ("Alex");
+	FragTrap vasya (alex);
 
-	FragTrap Amara ("Amara");
-	FragTrap Moze ("Moze");
+	alex.rangedAttack("Robot number 1");
+	alex.meleeAttack("Robot number 2");
 
+	alex.beRepaired(10);
+	alex.takeDamage(90);
+	alex.takeDamage(5);
+	alex.vaulthunter_dot_exe("Robot  number 2");
+	alex.vaulthunter_dot_exe("Robot  number 2");
+	alex.vaulthunter_dot_exe("Robot  number 2");
+	alex.vaulthunter_dot_exe("Robot  number 2");
+	alex.vaulthunter_dot_exe("Robot  number 2");
+	alex.beRepaired(10);
+	alex.takeDamage(20);
+	alex.beRepaired(10);
+	alex.takeDamage(20);
+	alex.takeDamage(20);
+	alex.takeDamage(20);
+	alex.takeDamage(20);
+	alex.takeDamage(20);
+	alex.takeDamage(15);
 
-	Amara.rangedAttack("Devil");
-	Amara.meleeAttack("Devil");
-	Moze.vaulthunter_dot_exe("Robot");
-	Amara.takeDamage(30);
-	Moze.beRepaired(20);
-	Amara.beRepaired(20);
-	Amara.vaulthunter_dot_exe("Athena");
-	Amara.takeDamage(30);
-	Moze.takeDamage(30);
-	Moze.rangedAttack("Athena");
-	Amara.takeDamage(50);
-	Moze.meleeAttack("Athena");
-	Moze.takeDamage(55);
-	Amara.vaulthunter_dot_exe("Athena");
-	Amara.takeDamage(30);
-	Moze.takeDamage(30);
-
-	return (0);
+	std::cout << std::endl;;
+	vasya.beRepaired(10);
+	vasya.takeDamage(90);
+	vasya.takeDamage(5);
+	vasya.vaulthunter_dot_exe("Robot  number 2");
+	vasya.vaulthunter_dot_exe("Robot  number 2");
+	vasya.vaulthunter_dot_exe("Robot  number 2");
+	vasya.vaulthunter_dot_exe("Robot  number 2");
+	vasya.vaulthunter_dot_exe("Robot  number 2");
+	vasya.beRepaired(10);
+	vasya.takeDamage(20);
+	vasya.beRepaired(10);
+	vasya.takeDamage(20);
+	vasya.takeDamage(20);
+	vasya.takeDamage(20);
 }
