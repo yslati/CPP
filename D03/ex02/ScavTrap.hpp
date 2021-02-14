@@ -6,7 +6,7 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 10:26:26 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/11 18:13:11 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/14 12:51:39 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ScavTrap: public ClapTrap {
 		void		challengeNewcomer( void );
 
 	private:
+
 
 };
 

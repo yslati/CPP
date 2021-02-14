@@ -6,40 +6,44 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 10:26:48 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/11 17:41:36 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/14 13:00:47 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "FragTrap.hpp"
 
-
-FragTrap::FragTrap( void ) : ClapTrap()
-{
-	this->_name = ClapTrap::_name;
+FragTrap::FragTrap( void ) : ClapTrap() {
+	
+	_maxHitPoints = 100;
+	_maxEnergyPoints = 100;
+	_meleeAttackDamage = 30;
+	_rangedAttackDamage = 20;
+	_armorDamageReduction = 5;
+	
 	std::cout << "\033[1;31mFRAGTRAP: Heheheeee Boooaa CLAPTRAP THE FRAGTRAP, MY NAME IS \033[0m" << "\033[0;32m"
 	<< _name << "\033[0m" << std::endl;
-	_hitPoints = ClapTrap::_maxHitPoints;
-	_energyPoints = ClapTrap::_maxEnergyPoints;
-	_level = ClapTrap::_level;
+
 	srand(clock());
 	return ;
 }
 
 
-FragTrap::~FragTrap( void )
-{
+FragTrap::~FragTrap( void ) {
 	std::cout << "\033[1;32mIs it dead? Can, can I open my eyes now?\033[0m" << std::endl;
 	return ;
 }
 
-FragTrap::FragTrap( std::string const & name ) : ClapTrap(name)
-{
-	this->_name = name;
+FragTrap::FragTrap( std::string const & name ) : ClapTrap(name) {
+	
+	_maxHitPoints = 100;
+	_maxEnergyPoints = 100;
+	_meleeAttackDamage = 30;
+	_rangedAttackDamage = 20;
+	_armorDamageReduction = 5;
+	
 	std::cout << "\033[1;32mHey Everybody! Let's get this party started my name is \033[0m"
 	<< "\033[0;32m" << this->_name << "\033[0m" << std::endl;
-	_hitPoints = ClapTrap::_maxHitPoints;
-	_energyPoints = ClapTrap::_maxEnergyPoints;
-	_level = ClapTrap::_level;
+
 	srand(clock());
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 10:26:39 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/11 17:42:54 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/14 15:21:27 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,15 @@ class ClapTrap {
 		}
 
 	protected:
-		std::string	_name;
-		int			_hitPoints;
-		static int	_maxHitPoints;
-		int 		_energyPoints;
-		static int	_maxEnergyPoints;
-		int 		_level;
-		static int	_meleeAttackDamage;
-		static int	_rangedAttackDamage;
-		static int	_armorDamageReduction;
+		std::string		_name;
+		unsigned int	_hitPoints;
+		unsigned int	_maxHitPoints;
+		unsigned int 	_energyPoints;
+		unsigned int	_maxEnergyPoints;
+		unsigned int 	_level;
+		unsigned int	_meleeAttackDamage;
+		unsigned int	_rangedAttackDamage;
+		unsigned int	_armorDamageReduction;
 };
 
 #endif

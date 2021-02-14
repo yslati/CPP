@@ -6,7 +6,7 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 10:24:32 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/11 18:15:19 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/14 12:00:07 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ void	FragTrap::beRepaired(unsigned int amount) {
 	if (this->_hitPoints > 0 && (this->_hitPoints + amount) <= unsigned(_maxHitPoints))
 	{
 		this->_hitPoints += amount;
-		std::cout << "FR4G-TP " << this->_name << "BeRepaired with "
+		std::cout << "FR4G-TP " << this->_name << " BeRepaired with "
 		<< amount << "and his life is " << this->_hitPoints << std::endl;
 	}
 	else if ((this->_hitPoints + amount) > unsigned(_maxHitPoints))
@@ -147,7 +147,7 @@ int		FragTrap::getPoints( void ) const {
 }
 
 void	FragTrap::lazerAttack(std::string const & target) {
-	std::cout << "Boogie time! Everybody, dance time! Da-da-da-dun-daaa-da-da-da-dun-daaa!" << this->_name << " attacks " << 
+	std::cout << "Boogie time! Everybody, dance time! Da-da-da-dun-daaa-da-da-da-dun-daaa! " << this->_name << " attacks " << 
 	target << " causing 10 points of damage" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 10:27:10 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/11 17:42:54 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/14 11:42:46 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,7 @@ class NinjaTrap : public ClapTrap {
 		void	ninjaShoeBox(FragTrap const & frag);
 		void	ninjaShoeBox(ScavTrap const & scav);
 	private:
-		std::string		_name;
-		int				_hitPoints;
-		int				_energyPoints;
-		int				_level;
+		
 };
 
 #endif

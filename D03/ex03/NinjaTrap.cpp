@@ -6,27 +6,49 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 10:27:04 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/11 17:41:36 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/14 15:24:39 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "NinjaTrap.hpp"
 
+/*
+• Hit points (60)
+• Max hit points (60)
+• Energy points (120)
+• Max energy points (120)
+• Level (1)
+• Name (Parameter of constructor)
+• Melee attack damage (60)
+• Ranged attack damage (5)
+• Armor damage reduction (0)
+*/
+
 NinjaTrap::NinjaTrap( void ) : ClapTrap() {
-	this->_name = ClapTrap::_name;
+
+	_maxHitPoints = 60;
+	_maxEnergyPoints = 120;
+	_meleeAttackDamage = 60;
+	_rangedAttackDamage = 5;
+	_armorDamageReduction = 0;
+	
 	std::cout << "\033[0;32mNinjaTrap: yo yo everyBody Welcome me am i awesome\033[0m" << std::endl;
-	this->_hitPoints = ClapTrap::_maxHitPoints;
-	this->_energyPoints = ClapTrap::_maxEnergyPoints;
-	this->_level = ClapTrap::_level;
+	
+	return ;
 }
 
 NinjaTrap::NinjaTrap( std::string const & name ) : ClapTrap(name) {
-	this->_name = name;
+
+	_maxHitPoints = 60;
+	_maxEnergyPoints = 120;
+	_meleeAttackDamage = 60;
+	_rangedAttackDamage = 5;
+	_armorDamageReduction = 0;
+	
 	std::cout << "\033[1;32mHello Moa ha ha ha !!, my name is \033[0m" << "\033[1;31m" << this->_name
 	<< "\033[0m" << std::endl;
-	this->_hitPoints = ClapTrap::_maxHitPoints;
-	this->_energyPoints = ClapTrap::_maxEnergyPoints;
-	this->_level = ClapTrap::_level;
+
+	return ;
 }
 
 NinjaTrap::~NinjaTrap( void ) {
@@ -42,8 +64,7 @@ NinjaTrap::NinjaTrap( NinjaTrap const & src ) : ClapTrap(src) {
 }
 
 NinjaTrap & NinjaTrap::operator=( NinjaTrap const & src ) {
-	if (this != &src)
-	{
+	if (this != &src) {
 		this->_name = src._name;
 		this->_hitPoints = src._hitPoints;
 		this->_energyPoints = src._energyPoints;

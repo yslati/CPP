@@ -6,33 +6,37 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 10:27:23 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/11 17:41:36 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/14 13:02:03 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ScavTrap.hpp"
 
-
-ScavTrap::ScavTrap( void ) : ClapTrap()
-{
-	this->_name = ClapTrap::_name;
-	this->_hitPoints = ClapTrap::_maxHitPoints;
-	this->_energyPoints = ClapTrap::_maxEnergyPoints;
-	this->_level = ClapTrap::_level;
+ScavTrap::ScavTrap( void ) : ClapTrap() {
 	std::cout << "\033[1;32mScavTrap: Hey hey check me out everyBody my name is "
 	<< this->_name << "\033[0m" << std::endl;
+	
+	_maxHitPoints = 100;
+	_maxEnergyPoints = 50;
+	_meleeAttackDamage = 20;
+	_rangedAttackDamage = 15;
+	_armorDamageReduction = 3;
+
 	srand(clock());
 	return ;
 }
 
-ScavTrap::ScavTrap( std::string const & name ) : ClapTrap(name)
-{
-	this->_name = name;
+ScavTrap::ScavTrap( std::string const & name ) : ClapTrap(name) {
+	
+	_maxHitPoints = 100;
+	_maxEnergyPoints = 50;
+	_meleeAttackDamage = 20;
+	_rangedAttackDamage = 15;
+	_armorDamageReduction = 3;
+	
 	std::cout << "\033[2;32mScavTrap: Yoooohooo, unce!, !unce, I think I lost the beat but unce!, my name is " 
 	<< this->_name << "\033[0m" << std::endl;
-	this->_hitPoints = ClapTrap::_maxHitPoints;
-	this->_energyPoints = ClapTrap::_maxEnergyPoints;
-	this->_level = ClapTrap::_level;
+	
 	srand(clock());
 	return ;
 }
