@@ -6,7 +6,7 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:11:02 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/14 16:02:24 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/14 16:05:13 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,13 @@
 • meleeAttack (Ninjatrap)
 */
 
-
-// int		SuperTrap::_maxHitPoints = FragTrap::_maxHitPoints;
-// int		SuperTrap::_maxEnergyPoints = NinjaTrap::_maxEnergyPoints;
-// int		SuperTrap::_meleeAttackDamage = NinjaTrap::_meleeAttackDamage;
-// int		SuperTrap::_rangedAttackDamage = FragTrap::_rangedAttackDamage;
-// int		SuperTrap::_armorDamageReduction = FragTrap::_armorDamageReduction;
-
 SuperTrap::SuperTrap( void ) : ClapTrap(), FragTrap(), NinjaTrap() {
 
-	_maxHitPoints = 100;
-	_maxEnergyPoints = 120;
-	_meleeAttackDamage = 60;
-	_rangedAttackDamage = 20;
-	_armorDamageReduction = 5;
+	_maxHitPoints =  FragTrap::_maxHitPoints;
+	_maxEnergyPoints = NinjaTrap::_maxEnergyPoints;
+	_meleeAttackDamage = NinjaTrap::_meleeAttackDamage;
+	_rangedAttackDamage = FragTrap::_rangedAttackDamage;
+	_armorDamageReduction = FragTrap::_armorDamageReduction;
 	std::cout << "\033[1;31mSP4G-TP: SuperTrap is in a good mode to start Eating banana\033[0m" << std::endl;
 
 	return ;
