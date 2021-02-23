@@ -6,7 +6,7 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 11:57:07 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/20 12:30:09 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/22 15:17:33 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,15 @@ AWeapon &	AWeapon::operator=(AWeapon const & src) {
 	_damage = src.getDamage();
 	
 	return *this;
+}
+
+std::string const & AWeapon::getName() const {
+	return _name;
+}
+
+int AWeapon::getAPCost() const {
+	return _apcost;
+}
+int AWeapon::getDamage() const {
+	return _damage;
 }

@@ -6,7 +6,7 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 12:35:52 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/20 12:51:01 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/22 15:21:48 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,9 @@ class Enemy{
 		Enemy & operator=(Enemy const & src);
 		virtual ~Enemy();
 
-		std::string const & getType() const {
-			return _type;
-		}
-		int		getHP() const {
-			return _hp;
-		}
+		std::string const &	getType() const;
+		int					getHP() const;
+		void				setHP(int hp);
 
 		virtual void takeDamage(int damage);
 };

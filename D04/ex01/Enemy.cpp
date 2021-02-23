@@ -6,7 +6,7 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 12:44:22 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/20 12:56:31 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/22 15:21:57 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,23 @@ Enemy &	Enemy::operator=(Enemy const & src) {
 	_type = src.getType();
 	
 	return *this;
+}
+
+void		Enemy::takeDamage(int damage) {
+	if (_hp <= 0 || damage <= 0)
+			return;
+	if (damage > _hp)
+		_hp = 0;
+	else
+		_hp -= damage;
+}
+
+std::string const &	Enemy::getType() const {
+	return _type;
+}
+int					Enemy::getHP() const {
+	return _hp;
+}
+void				Enemy::setHP(int hp) {
+	_hp = hp;
 }

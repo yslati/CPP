@@ -6,7 +6,7 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 12:01:13 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/20 10:53:19 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/22 15:09:00 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,12 @@ Sorcerer::~Sorcerer() {
 
 void		Sorcerer::polymorph(Victim const & src) const {
 	src.getPolymorphed();
+}
+
+std::string		Sorcerer::getName() const {
+	return _name;
+}
+
+std::string		Sorcerer::getTitle() const {
+	return _title;
 }

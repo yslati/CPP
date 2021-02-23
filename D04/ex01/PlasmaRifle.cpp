@@ -6,7 +6,7 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 12:07:07 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/20 12:31:15 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/22 12:12:55 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,8 @@ PlasmaRifle &	PlasmaRifle::operator=(PlasmaRifle const & src) {
 
 PlasmaRifle::~PlasmaRifle() {
 	return;
+}
+
+void		 PlasmaRifle::attack() const {
+	std::cout << "* piouuu piouuu piouuu *" << std::endl;
 }

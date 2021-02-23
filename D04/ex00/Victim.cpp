@@ -6,7 +6,7 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 12:34:56 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/20 10:37:19 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/22 15:09:53 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,8 @@ Victim::~Victim() {
 
 void		Victim::getPolymorphed() const {
 	std::cout << _name << " has been turned into a cute little sheep!" << std::endl;
+}
+
+std::string		Victim::getName() const{
+	return _name;
 }

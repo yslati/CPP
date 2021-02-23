@@ -6,7 +6,7 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 12:26:58 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/20 12:28:44 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/22 12:13:30 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ class PowerFist: public AWeapon {
 		PowerFist(std::string const & name, int apcost, int damage);
 		~PowerFist();
 
-		virtual void attack() const {
-			std::cout << "* pschhh... SBAM! *" << std::endl;
-		}
+		void attack() const;
 };
 
 

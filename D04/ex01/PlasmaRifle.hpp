@@ -6,7 +6,7 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 12:06:12 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/20 12:22:45 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/22 12:12:50 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ class PlasmaRifle: public AWeapon {
 		PlasmaRifle(std::string const & name, int apcost, int damage);
 		~PlasmaRifle();
 
-		virtual void attack() const {
-			std::cout << "* piouuu piouuu piouuu *" << std::endl;
-		}
+		void attack() const;
 };
 
 

@@ -6,7 +6,7 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 12:29:57 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/20 11:03:13 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/22 15:09:48 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ class Victim {
 
 		virtual void getPolymorphed() const;
 
-		std::string getName() const {
-			return _name;
-		}
+		std::string getName() const;
 };
 
 std::ostream & operator<<(std::ostream &o, Victim const &src);

@@ -6,7 +6,7 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 12:28:49 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/20 12:32:02 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/22 12:13:41 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,8 @@ PowerFist &	PowerFist::operator=(PowerFist const & src) {
 
 PowerFist::~PowerFist() {
 	return;
+}
+
+void PowerFist::attack() const {
+	std::cout << "* pschhh... SBAM! *" << std::endl;
 }

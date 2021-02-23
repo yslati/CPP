@@ -6,7 +6,7 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 11:56:07 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/20 12:49:34 by yslati           ###   ########.fr       */
+/*   Updated: 2021/02/22 15:10:59 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,9 @@ class AWeapon {
 		AWeapon(std::string const & name, int apcost, int damage);
 		virtual ~AWeapon();
 		
-		std::string const & getName() const {
-			return _name;
-		}
-		int getAPCost() const {
-			return _apcost;
-		}
-		int getDamage() const {
-			return _damage;
-		}
+		std::string const & getName() const;
+		int getAPCost() const;
+		int getDamage() const;
 		virtual void attack() const = 0;
 };
 
