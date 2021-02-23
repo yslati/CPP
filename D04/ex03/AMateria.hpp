@@ -1,8 +1,8 @@
 #ifndef AMATERIA_H
 # define AMATERIA_H
 
-#include "ICharacter.hpp"
 class AMateria;
+#include "ICharacter.hpp"
 
 class AMateria {
 	private:
