@@ -12,6 +12,11 @@ TacticalMarine::TacticalMarine(TacticalMarine const & src)
 	return ;
 }
 
+TacticalMarine &		TacticalMarine::operator=(TacticalMarine const & src) {
+	static_cast<void>(src);
+	return *this;
+}
+
 void	TacticalMarine::battleCry() const
 {
 	std::cout << "For the holy PLOT!" << std::endl;

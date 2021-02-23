@@ -7,12 +7,37 @@ Squad::Squad() {
 }
 
 Squad::Squad(Squad const & src) {
+	for(int i = 0; i < src.getCount(); i++) {
+		push(src.getUnit(i));
+	}
 	*this = src;
 	return ;
 }
 
 Squad &		Squad::operator=(Squad const & src) {
+	t_list		*tmp = src._container;
 
+	if (this != &src) {
+		while (tmp) {
+			if (_container == NULL) {
+				_container = new(t_list);
+				_container->sm = tmp->sm;
+				_container->next = NULL;
+			}
+			else {
+				if  (checkIfExist(_container, tmp->sm) == true) {
+					delete _container->sm;
+					push(tmp->sm);
+				}
+				else {
+					push(tmp->sm);
+				}
+			}	
+			tmp = tmp->next;
+		}
+		_count = src.getCount();
+		*this = src;
+	}
 	return *this;
 }
 
@@ -38,7 +63,7 @@ ISpaceMarine*	Squad::getUnit(int n) const {
 	t_list	*tmp = _container;
 	if (n < 0 || n >= _count)
 		return NULL;
-	while (tmp->next && n)
+	while (n && tmp->next)
 	{
 		--n;
 		tmp = tmp->next;

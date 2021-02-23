@@ -13,6 +13,8 @@ class Squad: public ISquad {
 	private:
 		t_list		*_container;
 		int			_count;
+		bool		checkIfExist(t_list *_container, ISpaceMarine *sm);
+	
 	public:
 		Squad();
 		Squad(Squad const & src);
@@ -22,7 +24,6 @@ class Squad: public ISquad {
 		int				getCount() const;
 		ISpaceMarine*	getUnit(int n) const;
 		int				push(ISpaceMarine* sm);
-		bool			checkIfExist(t_list *_container, ISpaceMarine *sm);
 };
 
 

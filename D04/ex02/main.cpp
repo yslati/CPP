@@ -8,10 +8,11 @@ int main() {
 	ISpaceMarine* bob = new TacticalMarine;
 	ISpaceMarine* jim = new AssaultTerminator;
 	ISquad* vlc = new Squad;
+	ISquad* vlc2 = new Squad;
 	vlc->push(bob);
 	// std::cout << "hey\n";
 	vlc->push(jim);
-	// std::cout << "hey2\n";
+	vlc2 = vlc;
 	// ISpaceMarine *cur = vlc->getUnit(0);
 	// ISpaceMarine *cur1 = vlc->getUnit(1);
 	// cur->battleCry();
@@ -23,6 +24,16 @@ int main() {
 		cur->battleCry();
 		cur->rangedAttack();
 		cur->meleeAttack();
+	}
+	
+	std::cout << "====\n";
+
+	for (int i = 0; i < vlc2->getCount(); ++i)
+	{
+		ISpaceMarine* cur2 = vlc2->getUnit(i);
+		cur2->battleCry();
+		cur2->rangedAttack();
+		cur2->meleeAttack();
 	}
 	delete vlc;
 	return 0;

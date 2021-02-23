@@ -9,7 +9,7 @@ class AssaultTerminator: public ISpaceMarine {
 	public:
 		AssaultTerminator();
 		AssaultTerminator(AssaultTerminator const & src);
-		// AssaultTerminator & operator=(AssaultTerminator const & src);
+		AssaultTerminator & operator=(AssaultTerminator const & src);
 		~AssaultTerminator();
 
 		void battleCry() const;

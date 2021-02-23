@@ -10,6 +10,11 @@ AssaultTerminator::AssaultTerminator(AssaultTerminator const & src) {
 	return ;
 }
 
+AssaultTerminator &		AssaultTerminator::operator=(AssaultTerminator const & src) {
+	static_cast<void>(src);
+	return *this;
+}
+
 void	AssaultTerminator::battleCry() const {
 	std::cout << "This code is unclean. PURIFY IT!" << std::endl;
 }
