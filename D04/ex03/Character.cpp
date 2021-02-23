@@ -23,14 +23,14 @@ Character::~Character() {
 		delete _materias[i];
 }
 
-Character&	Character::operator=(Character const &rhs) {
-	this->_name = rhs.getName();
+Character&	Character::operator=(Character const &src) {
+	this->_name = src.getName();
 	for (int i = 0; i < _total; i++)
 		delete _materias[i];
 	this->_total = 0;
-	for (int i = 0; i < rhs._total; i++)
-		this->equip(rhs._materias[i]->clone());
-	for (int i = rhs._total; i < 4; i++)
+	for (int i = 0; i < src._total; i++)
+		this->equip(src._materias[i]->clone());
+	for (int i = src._total; i < 4; i++)
 		_materias[i] = NULL;
 	return *this;
 }
