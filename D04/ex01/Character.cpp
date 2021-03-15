@@ -6,7 +6,7 @@
 /*   By: yslati <yslati@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 10:56:59 by yslati            #+#    #+#             */
-/*   Updated: 2021/02/22 15:19:51 by yslati           ###   ########.fr       */
+/*   Updated: 2021/03/15 11:08:07 by yslati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 Character::Character() {
 	_ap = 40;
+	// _name = "Default";
+	_weapon = NULL;
 	return;
 }
 

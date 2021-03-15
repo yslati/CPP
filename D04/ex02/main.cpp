@@ -10,13 +10,13 @@ int main() {
 	ISquad* vlc = new Squad;
 	ISquad* vlc2 = new Squad;
 	vlc->push(bob);
-	// std::cout << "hey\n";
 	vlc->push(jim);
 	vlc2 = vlc;
-	// ISpaceMarine *cur = vlc->getUnit(0);
-	// ISpaceMarine *cur1 = vlc->getUnit(1);
-	// cur->battleCry();
-	// cur1->battleCry();
+	std::cout << "hey\n";
+	ISpaceMarine *cur = vlc->getUnit(0);
+	ISpaceMarine *cur1 = vlc->getUnit(1);
+	cur->battleCry();
+	cur1->battleCry();
 	vlc->push(jim);
 	for (int i = 0; i < vlc->getCount(); ++i)
 	{
@@ -36,5 +36,6 @@ int main() {
 		cur2->meleeAttack();
 	}
 	delete vlc;
+	
 	return 0;
 }
