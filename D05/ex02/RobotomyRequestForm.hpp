@@ -2,10 +2,12 @@
 # define ROBOTOMYREQUESTFORM_H
 
 #include "Form.hpp"
+#include <time.h>
+
 
 class RobotomyRequestForm: public Form {
 	private:
-		std::string		target;
+		
 		
 	public:
 		RobotomyRequestForm();

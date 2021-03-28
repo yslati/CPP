@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <exception>
+#include <fstream>
 
 #include "Bureaucrat.hpp"
 
@@ -15,20 +16,23 @@ class Form {
 		bool				_isSigned;
 		const int			_signGrade;
 		const int			_execGrade;
+		std::string			_target;
 		
 	public:
 		Form();
-		Form(std::string name, int signGrade, int execGrade);
+		Form(std::string name, int signGrade, int execGrade, std::string target);
 		Form(Form const & src);
 		Form & operator=(Form const& src);
 		~Form();
 
 		std::string getname() const;
+		std::string gettarget() const;
 		int			getsignedGrade() const;
 		int			getexecGrade() const;
 		bool		getisSigned() const;
 
-		void		beSigned(const Bureaucrat b);
+		void	beSigned(const Bureaucrat b);
+		void	execute(Bureaucrat const & executor) const;
 
 		class GradeTooHighException: public std::exception {
 			public:

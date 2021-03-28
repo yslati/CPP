@@ -5,7 +5,7 @@ Form::Form(): _name("default"), _signGrade(100), _execGrade(120) {
 	return ;
 }
 
-Form::Form(std::string name, int signGrade, int execGrade): _name(name), _signGrade(signGrade), _execGrade(execGrade) {
+Form::Form(std::string name, int signGrade, int execGrade, std::string target): _name(name), _signGrade(signGrade), _execGrade(execGrade), _target(target) {
 	_isSigned = false;
 	if (signGrade > 150 || execGrade > 150)
 		throw GradeTooLowException();
@@ -13,7 +13,7 @@ Form::Form(std::string name, int signGrade, int execGrade): _name(name), _signGr
 		throw GradeTooHighException();
 }
 
-Form::Form(Form const & src): _name(src._name), _isSigned(src._isSigned), _signGrade(src._signGrade), _execGrade(src._execGrade) {
+Form::Form(Form const & src): _name(src._name), _isSigned(src._isSigned), _signGrade(src._signGrade), _execGrade(src._execGrade), _target(src._target) {
 	*this = src;
 	return ;
 }
@@ -26,6 +26,10 @@ Form & Form::operator=(Form const & src){
 
 std::string Form::getname() const {
 	return _name;
+}
+
+std::string Form::gettarget() const {
+	return _target;
 }
 
 int Form::getsignedGrade() const {
