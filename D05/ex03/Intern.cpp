@@ -35,5 +35,6 @@ Form*		Intern::makeForm(std::string name, std::string target) {
 				return new PresidentialPardonForm(target);
 		}
 	}
+	return NULL;
 }
 
