@@ -16,7 +16,7 @@ Intern::~Intern() {
 }
 
 Form*		Intern::makeForm(std::string name, std::string target) {
-	std::string allforms[3] = {"Shrubbery Creation", "Robotomy Request", "Presidential Pardon"};
+	std::string allforms[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 	int i = 3;
 	while (--i >= 0) {
 		if (name == allforms[i])
