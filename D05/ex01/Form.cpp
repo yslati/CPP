@@ -1,12 +1,10 @@
 #include "Form.hpp"
 
-Form::Form(): _name("default"), _signGrade(100), _execGrade(120) {
-	_isSigned = false;
+Form::Form(): _name("default"), _isSigned(false), _signGrade(100), _execGrade(120) {
 	return ;
 }
 
-Form::Form(std::string name, int signGrade, int execGrade): _name(name), _signGrade(signGrade), _execGrade(execGrade) {
-	_isSigned = false;
+Form::Form(std::string name, int signGrade, int execGrade): _name(name), _isSigned(false), _signGrade(signGrade), _execGrade(execGrade) {
 	if (signGrade > 150 || execGrade > 150)
 		throw GradeTooLowException();
 	else if (signGrade < 1 || execGrade < 1)
@@ -14,7 +12,6 @@ Form::Form(std::string name, int signGrade, int execGrade): _name(name), _signGr
 }
 
 Form::Form(Form const & src): _name(src._name), _isSigned(src._isSigned), _signGrade(src._signGrade), _execGrade(src._execGrade) {
-	*this = src;
 	return ;
 }
 

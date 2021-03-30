@@ -17,6 +17,11 @@ class Intern {
 		~Intern();
 
 		Form	*makeForm(std::string name, std::string target);
+		
+		Form*	shrubberycreation(std::string const &target);
+		Form*	robotomyrequest(std::string const &target);
+		Form*	presidentialpardon(std::string const &target);
+
 };
 
 

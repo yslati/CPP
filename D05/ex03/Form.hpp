@@ -23,7 +23,7 @@ class Form {
 		Form(std::string name, int signGrade, int execGrade, std::string target);
 		Form(Form const & src);
 		Form & operator=(Form const& src);
-		~Form();
+		virtual ~Form();
 
 		std::string 	getname() const;
 		std::string 	gettarget() const;

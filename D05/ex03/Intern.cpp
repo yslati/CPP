@@ -15,26 +15,29 @@ Intern & Intern::operator=(Intern const & src){
 Intern::~Intern() {
 }
 
-Form*		Intern::makeForm(std::string name, std::string target) {
-	std::string allforms[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-	int i = 3;
-	while (--i >= 0) {
-		if (name == allforms[i])
-			break;
-	}
-	if (i < 0)
-		std::cout << name <<" is not found" << std::endl;
-	else {
-		std::cout << "Intern creates " << name << std::endl;
-		switch (i) {
-			case 0:
-				return new ShrubberyCreationForm(target);
-			case 1:
-				return new RobotomyRequestForm(target);
-			case 2:
-				return new PresidentialPardonForm(target);
-		}
-	}
-	return NULL;
+Form* Intern::shrubberycreation(std::string const &target) {
+	return (new ShrubberyCreationForm(target));
+}
+Form* Intern::robotomyrequest(std::string const &target) {
+	return (new RobotomyRequestForm(target));
+}
+Form* Intern::presidentialpardon(std::string const &target) {
+	return (new PresidentialPardonForm(target));
 }
 
+Form*		Intern::makeForm(std::string name, std::string target) {
+	std::string allforms[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+	Form* (Intern::*Forms[3])(std::string const &) = {
+		&Intern::shrubberycreation,
+		&Intern::robotomyrequest,
+		&Intern::presidentialpardon
+	};
+	for (int i = 0; i < 3; i++) {
+		if (allforms[i] == name) {
+			std::cout << "Intern creates " << name << std::endl;
+			return((this->*(Forms[i]))(target));
+		}
+	}
+	std::cout << name <<" is not found" << std::endl;
+	return NULL;
+}
