@@ -27,11 +27,7 @@ Form* Intern::presidentialpardon(std::string const &target) {
 
 Form*		Intern::makeForm(std::string name, std::string target) {
 	std::string allforms[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-	Form* (Intern::*Forms[3])(std::string const &) = {
-		&Intern::shrubberycreation,
-		&Intern::robotomyrequest,
-		&Intern::presidentialpardon
-	};
+	Form* (Intern::*Forms[3])(std::string const &) = { &Intern::shrubberycreation, &Intern::robotomyrequest, &Intern::presidentialpardon };
 	for (int i = 0; i < 3; i++) {
 		if (allforms[i] == name) {
 			std::cout << "Intern creates " << name << std::endl;
