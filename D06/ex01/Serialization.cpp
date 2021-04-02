@@ -8,10 +8,10 @@ Serialization::Serialization(Serialization const & src) {
 
 }
 
-conversion & Serialization::operator=(conversion const & src) {
+Serialization & Serialization::operator=(conversion const & src) {
 
 }
 
-Serialization::~conversion() {
-	
+Serialization::~Serialization() {
+
 }
