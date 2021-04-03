@@ -14,8 +14,13 @@ class conversion {
 		std::string		_flt;
 		std::string		_parse_float(std::string arg);
 		int				_check_char(std::string str);
-		bool			_isScientific(std::string data);
-		void			_printdata(std::string data);
+		bool			_isScientific();
+		void			_printdata();
+
+		double			_data;
+		void			_toChar();
+		void			_toFloat();
+		void			_toDouble();
 	public:
 		conversion();
 		conversion(std::string str);
