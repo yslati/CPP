@@ -4,14 +4,18 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <iomanip>
+#include <limits>
 #include <exception>
 
 class conversion {
 	private:
-		std::string		first;
-		std::string		flt;
-		std::string		parse_float(std::string arg);
-		int				check_char(std::string str);
+		std::string		_first;
+		std::string		_flt;
+		std::string		_parse_float(std::string arg);
+		int				_check_char(std::string str);
+		bool			_isScientific(std::string data);
+		void			_printdata(std::string data);
 	public:
 		conversion();
 		conversion(std::string str);
