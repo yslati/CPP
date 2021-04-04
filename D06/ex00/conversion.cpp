@@ -17,7 +17,11 @@ std::string		conversion::_parse_float(std::string arg) {
 	size_t pos = arg.find(".");
 	if (pos == std::string::npos)
 		return arg;
-	std::string str = arg.substr((int)pos + 1, arg.length());
+	std::string str = arg.substr(0, pos);
+	for (size_t i = 0; i < str.length(); i++)
+		if (str[i] > '9' || str[i] < '0')
+			return "";
+	str = arg.substr((int)pos + 1, arg.length());
 	if (str[str.length() - 1] == 'f')
 		str = str.substr(0, str.length() - 1);
 	this->_flt = str;
@@ -55,13 +59,13 @@ int			conversion::_check_char(std::string str) {
 }
 
 void		conversion::_toChar() {
-	std::cout << "char: '";
+	std::cout << "char: ";
 	if (_data < 0 || _data > 127 || _isScientific() == true)
 		std::cout << "Impossible" << std::endl;
 	else if (_data < 33 || _data > 126)
 		std::cout << "Non Displayable" << std::endl;
 	else
-		std::cout << static_cast<char>(_data) << "'" << std::endl;
+		std::cout << "'" << static_cast<char>(_data) << "'" << std::endl;
 }
 
 void		conversion::_toFloat() {
@@ -96,7 +100,7 @@ void		conversion::_printdata() {
 	}
 	this->_data = atof(_first.c_str());
 	this->_toChar();
-	if (_isScientific() == true || static_cast<double>(_data) > std::numeric_limits<int>::max() || static_cast<double>(_data) < std:: numeric_limits<int>::min()) {
+	if (_isScientific() == true || static_cast<long int>(_data) > std::numeric_limits<int>::max() || static_cast<long int>(_data) < std:: numeric_limits<int>::min()) {
 		std::cout << "int: Impossible" << std::endl;
 		std::cout << std::setprecision(_first.length());
 		std::cout << "float: " << static_cast<float>(_data) << "f" << std::endl;
