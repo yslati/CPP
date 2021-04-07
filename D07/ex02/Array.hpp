@@ -34,7 +34,7 @@ class Array {
 		}
 
 		int		size() const {
-			return n;
+			return _n;
 		}
 };
 
