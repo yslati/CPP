@@ -1,4 +1,4 @@
-NAME = ex00
+NAME = whatever
 
 SRC = main.cpp
 
