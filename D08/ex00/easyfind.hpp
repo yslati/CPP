@@ -3,7 +3,7 @@
 
 #include <exception>
 #include <list>
-#include <vector>
+#include <iterator>
 #include <iostream>
 
 class NotFound: public std::exception {
@@ -11,15 +11,15 @@ class NotFound: public std::exception {
 		virtual const char* what() const throw() {
 			return ("Not Found");
 		}
-}
+};
 
 template<typename T>
 int		easyfind(T & arr, int find) {
 	typename T::iterator it;
-	it = std::find(T.begin(), T.end(), find);
-	if (it != T.end())
+	it = std::find(arr.begin(), arr.end(), find);
+	if (it != arr.end())
 		return 1;
-	throw
+	throw NotFound();
 }
 
 #endif
