@@ -6,8 +6,6 @@
 #include <vector>
 #include <ctime>
 
-
-
 class Span {
 	private:
 		unsigned int	_n;
@@ -21,6 +19,7 @@ class Span {
 		~Span();
 
 		void	addNumber(long n);
+
 		template<template<typename> class T>
 		void	addNumber(T<long*> begin, T<long*> end) {
 			if (end <= begin)
@@ -31,8 +30,10 @@ class Span {
 			for (T<long *> it = begin; it != end; it++)
 				_v.push_back(*it);
 		}
+
 		long		shortestSpan();
 		long		longestSpan();
+
 
 		class CantAddMore: public std::exception {
 			public:
